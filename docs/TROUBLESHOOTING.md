@@ -627,7 +627,7 @@ rm -rf node_modules package-lock.json && npm install
 rm -rf backend/.tmp backend/database
 
 # 6. Nuclear option - fresh start
-cd .. && rm -rf AutoGraph && git clone ... && npm install
+cd .. && rm -rf Autograph && git clone ... && npm install
 ```
 
 ---

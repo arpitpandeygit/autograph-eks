@@ -1,4 +1,4 @@
-# AutoGraph Target Architecture
+# Autograph Target Architecture
 
 ## System Overview
 

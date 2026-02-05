@@ -1,4 +1,4 @@
-# AutoGraph Architecture
+# Autograph Architecture
 
 ## System Overview
 

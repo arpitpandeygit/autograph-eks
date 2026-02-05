@@ -4,7 +4,7 @@
 > **Difficulty:** Intermediate to Advanced
 > **Time Required:** 2-4 hours (initial setup)
 
-This guide covers promoting AutoGraph from local development to production infrastructure.
+This guide covers promoting Autograph from local development to production infrastructure.
 
 ---
 
@@ -135,7 +135,7 @@ flowchart TB
 1. Go to [hetzner.com/cloud](https://www.hetzner.com/cloud)
 2. Create account and verify email
 3. Add payment method
-4. Create a new project: "AutoGraph"
+4. Create a new project: "Autograph"
 
 ### Step 2: Generate API Token
 
@@ -407,7 +407,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/PearlThoughtsInternship/AutoGraph.git
+    repoURL: https://github.com/PearlThoughtsInternship/Autograph.git
     targetRevision: main
     path: k8s/overlays/production
   destination:

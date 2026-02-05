@@ -1,8 +1,8 @@
-# Product Vision: AutoGraph - AI-Powered Content Platform
+# Product Vision: Autograph - AI-Powered Content Platform
 
 ## Overview
 
-AutoGraph is an AI-powered content platform that helps creators and businesses generate, manage, and distribute content at scale. It combines Strapi CMS with AI capabilities (Claude/OpenAI) to accelerate content creation by 10x.
+Autograph is an AI-powered content platform that helps creators and businesses generate, manage, and distribute content at scale. It combines Strapi CMS with AI capabilities (Claude/OpenAI) to accelerate content creation by 10x.
 
 ## Problem Statement
 
@@ -15,7 +15,7 @@ Content creation is slow and expensive:
 
 ## Solution
 
-AutoGraph transforms content operations:
+Autograph transforms content operations:
 - 30 minutes per blog post
 - $5-10 in API costs
 - Minutes for translation

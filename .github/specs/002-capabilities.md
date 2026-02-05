@@ -1,8 +1,8 @@
-# AutoGraph Capabilities Specification
+# Autograph Capabilities Specification
 
 ## Capability 1: AI Content Generation
 
-The core feature that makes AutoGraph valuable.
+The core feature that makes Autograph valuable.
 
 ### User Flow
 

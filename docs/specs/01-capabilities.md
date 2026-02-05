@@ -1,10 +1,10 @@
-# AutoGraph Capabilities
+# Autograph Capabilities
 
 ## Core Capabilities
 
 ### 1. AI Content Generation
 
-Primary feature that differentiates AutoGraph.
+Primary feature that differentiates Autograph.
 
 **Capabilities:**
 - Blog post generation from topics/prompts

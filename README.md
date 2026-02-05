@@ -1,4 +1,4 @@
-# AutoGraph
+# Autograph
 
 > **AI-Powered Content Platform** — Strapi CMS meets Claude/OpenAI
 
@@ -8,9 +8,9 @@
 
 ---
 
-## 🎯 What is AutoGraph?
+## 🎯 What is Autograph?
 
-AutoGraph is an AI-powered content platform that helps creators and businesses **generate, manage, and distribute content at scale**. Built as part of the PearlThoughts DevOps Internship Program, it demonstrates production-grade infrastructure practices.
+Autograph is an AI-powered content platform that helps creators and businesses **generate, manage, and distribute content at scale**. Built as part of the PearlThoughts DevOps Internship Program, it demonstrates production-grade infrastructure practices.
 
 ```mermaid
 flowchart LR
@@ -19,7 +19,7 @@ flowchart LR
         Dev["Developer"]
     end
 
-    subgraph AutoGraph["🚀 AutoGraph Platform"]
+    subgraph Autograph["🚀 Autograph Platform"]
         Strapi["Strapi CMS"]
         AI["AI Service"]
     end
@@ -109,8 +109,8 @@ flowchart TB
 
 ```bash
 # Clone the repository
-git clone git@github.com:PearlThoughtsInternship/AutoGraph.git
-cd AutoGraph
+git clone git@github.com:PearlThoughtsInternship/Autograph.git
+cd Autograph
 
 # Switch to correct Node version (if using fnm)
 fnm use 22
@@ -214,7 +214,7 @@ flowchart LR
 ## 📁 Project Structure
 
 ```
-AutoGraph/
+Autograph/
 ├── backend/                    # Strapi CMS Application
 │   ├── config/                 # Strapi configuration
 │   │   ├── admin.ts           # Admin panel config
@@ -263,7 +263,7 @@ This project is part of the **PearlThoughts DevOps Internship Program**. You're 
 
 ```mermaid
 timeline
-    title Your 4-Week Journey with AutoGraph
+    title Your 4-Week Journey with Autograph
 
     section Week 1 — Foundation
         Infrastructure : OpenTofu modules
@@ -271,7 +271,7 @@ timeline
                        : k3s cluster setup
 
     section Week 2 — Product
-        AutoGraph : Deploy Strapi CMS
+        Autograph : Deploy Strapi CMS
                   : Configure PostgreSQL
                   : Add AI service
 
@@ -365,6 +365,6 @@ Proprietary - PearlThoughts Internship Program
 
 **Built with ❤️ by PearlThoughts Interns**
 
-[Documentation](docs/) · [Issues](https://github.com/PearlThoughtsInternship/AutoGraph/issues) · [Specifications](.github/specs/)
+[Documentation](docs/) · [Issues](https://github.com/PearlThoughtsInternship/Autograph/issues) · [Specifications](.github/specs/)
 
 </div>

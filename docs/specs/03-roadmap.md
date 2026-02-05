@@ -1,4 +1,4 @@
-# AutoGraph Implementation Roadmap
+# Autograph Implementation Roadmap
 
 ## Phase 1: Foundation (Week 1)
 

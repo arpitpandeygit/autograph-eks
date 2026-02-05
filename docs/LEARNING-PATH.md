@@ -4,7 +4,7 @@
 > **Duration:** 4 weeks
 > **Format:** Self-paced with mentor check-ins
 
-This curated learning path aligns with the AutoGraph project and DevOps internship goals.
+This curated learning path aligns with the Autograph project and DevOps internship goals.
 
 ---
 
@@ -32,7 +32,7 @@ flowchart LR
 
     subgraph Do["🛠️ Do"]
         Practice["Practice Locally"]
-        Build["Build AutoGraph"]
+        Build["Build Autograph"]
     end
 
     subgraph Teach["🎓 Teach"]
@@ -49,7 +49,7 @@ flowchart LR
 
 | Percentage | Activity | Example |
 |------------|----------|---------|
-| **70%** | Hands-on work | Deploy AutoGraph to k3s |
+| **70%** | Hands-on work | Deploy Autograph to k3s |
 | **20%** | Learn from others | Pair programming, code reviews |
 | **10%** | Formal learning | Courses, documentation |
 

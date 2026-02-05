@@ -1,8 +1,8 @@
-# AutoGraph Product Vision
+# Autograph Product Vision
 
 ## Overview
 
-AutoGraph is an AI-powered content platform that helps creators and businesses generate, manage, and distribute content at scale.
+Autograph is an AI-powered content platform that helps creators and businesses generate, manage, and distribute content at scale.
 
 ## Problem Statement
 
@@ -14,7 +14,7 @@ Content creation is:
 
 ## Solution
 
-AutoGraph provides:
+Autograph provides:
 - **AI Content Generation**: Generate blog posts, descriptions from prompts
 - **Smart Summarization**: Auto-summarize documents
 - **Multi-language**: AI translation and localization
@@ -23,7 +23,7 @@ AutoGraph provides:
 
 ## Value Proposition
 
-| Without AutoGraph | With AutoGraph |
+| Without Autograph | With Autograph |
 |-------------------|----------------|
 | 4-8 hours per blog post | 30 minutes |
 | $100-500 per piece | $5-10 in API costs |

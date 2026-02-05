@@ -4,7 +4,7 @@
 > **Time Required:** 30-45 minutes
 > **Difficulty:** Beginner
 
-This guide walks you through setting up AutoGraph locally on your machine.
+This guide walks you through setting up Autograph locally on your machine.
 
 ---
 
@@ -115,13 +115,13 @@ brew install jq
 
 ```bash
 # Using SSH (recommended if you have SSH keys set up)
-git clone git@github.com:PearlThoughtsInternship/AutoGraph.git
+git clone git@github.com:PearlThoughtsInternship/Autograph.git
 
 # Or using HTTPS
-git clone https://github.com/PearlThoughtsInternship/AutoGraph.git
+git clone https://github.com/PearlThoughtsInternship/Autograph.git
 
 # Navigate to the project
-cd AutoGraph
+cd Autograph
 ```
 
 ### Step 2: Set Node.js Version
@@ -410,7 +410,7 @@ http POST localhost:1337/api/articles \
 
 ## Next Steps
 
-Now that you have AutoGraph running locally:
+Now that you have Autograph running locally:
 
 1. 📖 **Create your first content type** - Article with title, content, author
 2. 🔌 **Test the API** - Use HTTPie or Postman to query your content

@@ -1,5 +1,5 @@
 /**
- * AutoGraph Health Check Tests
+ * Autograph Health Check Tests
  *
  * Validates the Strapi CMS setup is working correctly.
  * Run with: npm test (requires Strapi to be running)
