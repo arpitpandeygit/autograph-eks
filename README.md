@@ -1,73 +1,93 @@
 # AutoGraph
 
-AI-powered content platform built on Strapi CMS.
+AI-Powered Content Platform built on Strapi CMS.
 
 ## Overview
 
-AutoGraph helps creators and businesses generate, manage, and distribute content at scale. Built with:
-
-- **Strapi CMS** - Headless content management
-- **AI Services** - Content generation via Claude/OpenAI APIs
-- **PostgreSQL** - Production database (SQLite for local dev)
-- **Redis** - Caching and sessions
+AutoGraph helps creators and businesses generate, manage, and distribute content at scale by combining Strapi CMS with AI capabilities (Claude/OpenAI).
 
 ## Quick Start
 
+### Prerequisites
+
+- Node.js 20+ (recommend using fnm: `fnm use 22`)
+- npm or yarn
+
+### Local Development
+
 ```bash
 # Install dependencies
+cd backend
 npm install
 
 # Build Strapi
 npm run build
 
 # Start development server
-npm run dev
+npm run develop
 ```
 
-Access the admin panel at: http://localhost:1337/admin
+Strapi will be available at:
+- **Admin Panel:** http://localhost:1337/admin
+- **API:** http://localhost:1337/api
+
+### First Run
+
+1. Start the server with `npm run develop`
+2. Create your first admin user at http://localhost:1337/admin
+3. Configure content types in the Content-Type Builder
 
 ## Project Structure
 
 ```
 AutoGraph/
-├── backend/           # Strapi CMS
-│   ├── config/        # Strapi configuration
-│   ├── src/           # Custom code, plugins
-│   ├── database/      # Migrations
-│   └── tests/         # Health & API tests
-└── docs/              # Specifications
+├── backend/              # Strapi CMS application
+│   ├── config/          # Strapi configuration
+│   ├── src/
+│   │   ├── api/         # Custom API routes
+│   │   └── plugins/     # Custom plugins
+│   └── database/        # SQLite database (dev)
+├── tests/               # Integration tests
+└── .github/
+    └── specs/           # Product specifications
 ```
-
-## Testing
-
-```bash
-# Run tests
-npm test
-
-# Watch mode
-npm run test:watch
-```
-
-## API Endpoints
-
-| Endpoint | Description |
-|----------|-------------|
-| `/_health` | Health check (204) |
-| `/admin` | Admin panel |
-| `/api/*` | Content API (REST) |
-| `/graphql` | GraphQL endpoint |
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
-| CMS | Strapi 5.x |
+| CMS | Strapi 5 |
 | Database | SQLite (dev) / PostgreSQL (prod) |
-| AI | Claude API, OpenAI API |
-| Search | Meilisearch |
-| Cache | Redis |
+| AI | Claude API / OpenAI API |
+| Search | Meilisearch (planned) |
+| Cache | Redis (planned) |
 | Frontend | Next.js (planned) |
+
+## Specifications
+
+See `.github/specs/` for detailed product specifications:
+
+- [Product Vision](/.github/specs/001-product-vision.md)
+- [Capabilities](/.github/specs/002-capabilities.md)
+- [Architecture](/.github/specs/003-architecture.md)
+
+## Development
+
+### Running Tests
+
+```bash
+# Requires Strapi to be running
+npm test
+```
+
+### Environment Variables
+
+Copy `.env.example` to `.env` in the backend directory:
+
+```bash
+cp backend/.env.example backend/.env
+```
 
 ## License
 
-Private - PearlThoughts
+Proprietary - PearlThoughts Internship Program
