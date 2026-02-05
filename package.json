@@ -1,0 +1,22 @@
+{
+  "name": "autograph",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered content platform - Strapi CMS + AI Services",
+  "workspaces": [
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=backend",
+    "build": "npm run build --workspace=backend",
+    "start": "npm run start --workspace=backend",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
