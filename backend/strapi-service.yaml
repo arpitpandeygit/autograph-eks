@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: autograph-strapi-service
+  namespace: autograph
+spec:
+  type: LoadBalancer
+  selector:
+    app: autograph-strapi
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 1337
+

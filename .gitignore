@@ -54,3 +54,22 @@ backend/public/uploads/*
 # Misc
 .vercel
 .turbo
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+.env.*
+
+# Strapi
+backend/database/
+backend/public/uploads/
+
+# Kubernetes secrets
+*.secret.yaml
+
+# OS
+.DS_Store
+
