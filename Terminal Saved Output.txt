@@ -1,0 +1,905 @@
+Last login: Mon Feb  9 11:42:51 on ttys001
+arpitpandey@Arpits-MacBook-Air ~ % aws --version
+kubectl version --client
+docker --version
+git --version
+
+aws-cli/2.33.13 Python/3.13.11 Darwin/25.2.0 source/arm64
+Client Version: v1.35.0
+Kustomize Version: v5.7.1
+Docker version 29.1.3, build f52814d
+git version 2.50.1 (Apple Git-155)
+arpitpandey@Arpits-MacBook-Air ~ % aws sts get-caller-identity
+{
+    "UserId": "AIDAS6L4ZV3LDVNYMP3WQ",
+    "Account": "202662063830",
+    "Arn": "arn:aws:iam::202662063830:user/edurekaliveshaheer"
+}
+arpitpandey@Arpits-MacBook-Air ~ % git clone https://github.com/PearlThoughtsInternship/Autograph.git
+cd Autograph
+
+Cloning into 'Autograph'...
+remote: Enumerating objects: 82, done.
+remote: Counting objects: 100% (82/82), done.
+remote: Compressing objects: 100% (58/58), done.
+remote: Total 82 (delta 16), reused 79 (delta 13), pack-reused 0 (from 0)
+Receiving objects: 100% (82/82), 223.62 KiB | 768.00 KiB/s, done.
+Resolving deltas: 100% (16/16), done.
+arpitpandey@Arpits-MacBook-Air Autograph % cd backend
+
+arpitpandey@Arpits-MacBook-Air backend % ls
+config			favicon.png		package.json		README.md		tsconfig.json
+database		package-lock.json	public			src
+arpitpandey@Arpits-MacBook-Air backend % vi Dockerfile
+arpitpandey@Arpits-MacBook-Air backend % docker build -t autograph-strapi .
+docker run -p 1337:1337 autograph-strapi
+
+ERROR: Cannot connect to the Docker daemon at unix:///Users/arpitpandey/.docker/run/docker.sock. Is the docker daemon running?
+failed to connect to the docker API at unix:///Users/arpitpandey/.docker/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /Users/arpitpandey/.docker/run/docker.sock: connect: no such file or directory
+arpitpandey@Arpits-MacBook-Air backend % docker build -t autograph-strapi .
+docker run -p 1337:1337 autograph-strapi
+
+[+] Building 142.3s (11/11) FINISHED                                                                                                                                                      docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                                      0.2s
+ => => transferring dockerfile: 343B                                                                                                                                                                      0.1s
+ => [internal] load metadata for docker.io/library/node:22-alpine                                                                                                                                         6.5s
+ => [internal] load .dockerignore                                                                                                                                                                         0.1s
+ => => transferring context: 2B                                                                                                                                                                           0.1s
+ => CACHED [1/6] FROM docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                            0.0s
+ => => resolve docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                                   0.0s
+ => [internal] load build context                                                                                                                                                                         0.4s
+ => => transferring context: 773.17kB                                                                                                                                                                     0.4s
+ => [2/6] RUN apk add --no-cache   build-base gcc autoconf automake   zlib-dev libpng-dev vips-dev git bash                                                                                              49.3s
+ => [3/6] WORKDIR /opt/app                                                                                                                                                                                0.0s 
+ => [4/6] COPY package.json package-lock.json ./                                                                                                                                                          0.0s 
+ => [5/6] RUN npm install                                                                                                                                                                                56.7s 
+ => [6/6] COPY . .                                                                                                                                                                                        0.5s 
+ => exporting to image                                                                                                                                                                                   28.7s 
+ => => exporting layers                                                                                                                                                                                  20.4s 
+ => => exporting manifest sha256:99d1b1bf85ccc8ed20491a38a54124b1dc5e727a2bfb717b0162951a87556659                                                                                                         0.0s 
+ => => exporting config sha256:8ea98db9b49964444a38284ce1f3b7effd2788e5ce8db7574a2d4011924f6f46                                                                                                           0.0s 
+ => => exporting attestation manifest sha256:ce86663d1f2ca8e67f27b7b29c87032bccf14fda5d6a1783a610bd520642c5e1                                                                                             0.0s 
+ => => exporting manifest list sha256:e5fd7c6b23c682481d69900b899e318cd66d8055322ae0ec9aa105a970c78736                                                                                                    0.0s
+ => => naming to docker.io/library/autograph-strapi:latest                                                                                                                                                0.0s
+ => => unpacking to docker.io/library/autograph-strapi:latest                                                                                                                                             8.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/bb3i4g66l018rh4znwhtmy8rl
+
+> backend@0.1.0 start
+> strapi start
+
+Error: /opt/app/dist directory not found. Please run the build command before starting your application
+    at action (/opt/app/node_modules/@strapi/strapi/dist/src/cli/commands/start.js:15:47)
+arpitpandey@Arpits-MacBook-Air backend % vi Dockerfile 
+arpitpandey@Arpits-MacBook-Air backend % docker build -t autograph-strapi:prod .
+
+[+] Building 110.8s (20/20) FINISHED                                                                                                                                                      docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                                                                                      0.0s
+ => => transferring dockerfile: 748B                                                                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/node:22-alpine                                                                                                                                         2.4s
+ => [internal] load .dockerignore                                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                                           0.0s
+ => [internal] load build context                                                                                                                                                                         0.0s
+ => => transferring context: 1.76kB                                                                                                                                                                       0.0s
+ => CACHED [build 1/9] FROM docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                      0.0s
+ => => resolve docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                                   0.0s
+ => CACHED [build 2/9] RUN apk add --no-cache   build-base gcc autoconf automake   zlib-dev libpng-dev vips-dev git bash                                                                                  0.0s
+ => [stage-1 2/7] RUN apk add --no-cache vips-dev                                                                                                                                                        61.4s
+ => [build 3/9] WORKDIR /opt/                                                                                                                                                                             0.0s
+ => [build 4/9] COPY package.json package-lock.json ./                                                                                                                                                    0.0s
+ => [build 5/9] RUN npm install -g node-gyp                                                                                                                                                               4.5s
+ => [build 6/9] RUN npm install                                                                                                                                                                          57.7s
+ => [stage-1 3/7] WORKDIR /opt/                                                                                                                                                                           0.0s
+ => [build 7/9] WORKDIR /opt/app                                                                                                                                                                          0.3s 
+ => [build 8/9] COPY . .                                                                                                                                                                                  0.0s 
+ => [build 9/9] RUN npm run build                                                                                                                                                                        14.4s 
+ => [stage-1 4/7] COPY --from=build /opt/node_modules ./node_modules                                                                                                                                      3.7s 
+ => [stage-1 5/7] WORKDIR /opt/app                                                                                                                                                                        0.2s 
+ => [stage-1 6/7] COPY --from=build /opt/app ./                                                                                                                                                           0.0s 
+ => [stage-1 7/7] RUN chown -R node:node /opt/app                                                                                                                                                         0.2s 
+ => exporting to image                                                                                                                                                                                   20.5s 
+ => => exporting layers                                                                                                                                                                                  15.3s 
+ => => exporting manifest sha256:253eeb7e5c769f076e9829cd3acffd8fbc5827cbb8e14e94fab4b43fb5f96ebb                                                                                                         0.0s 
+ => => exporting config sha256:f965f977e702bb742f793d49f5c1db67e91bebbbb9a183e20cfbf5797a1ff10b                                                                                                           0.0s 
+ => => exporting attestation manifest sha256:07d31a81092655e01e65d81a22c7e201f5e23ed438e37710c7d6316d57250b1f                                                                                             0.0s
+ => => exporting manifest list sha256:cc5ccc6789483b0c6dbc265af7b85b86e3822cea1319bfdd01a364805114dab6                                                                                                    0.0s
+ => => naming to docker.io/library/autograph-strapi:prod                                                                                                                                                  0.0s
+ => => unpacking to docker.io/library/autograph-strapi:prod                                                                                                                                               5.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/r9lyvvj7wnxv926tc3jkyy2a3
+arpitpandey@Arpits-MacBook-Air backend % docker run -p 1337:1337 autograph-strapi:prod
+
+
+> backend@0.1.0 start
+> strapi start
+
+[2026-02-09 11:30:41.998] error: Missing admin.auth.secret configuration. The SessionManager requires a JWT secret
+Error: Missing admin.auth.secret configuration. The SessionManager requires a JWT secret
+    at Object.register (/opt/node_modules/@strapi/core/dist/providers/session-manager.js:17:19)
+    at Strapi.register (/opt/node_modules/@strapi/core/dist/Strapi.js:327:38)
+    at async Strapi.load (/opt/node_modules/@strapi/core/dist/Strapi.js:318:9)
+    at async Strapi.start (/opt/node_modules/@strapi/core/dist/Strapi.js:206:17)
+[2026-02-09 11:30:41.998] info: Shutting down Strapi
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 11.9.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.9.0
+npm notice To update run: npm install -g npm@11.9.0
+npm notice
+arpitpandey@Arpits-MacBook-Air backend % docker run -p 1337:1337 \
+  -e NODE_ENV=production \
+  -e HOST=0.0.0.0 \
+  -e PORT=1337 \
+  -e APP_KEYS="key1,key2,key3,key4" \
+  -e JWT_SECRET="jwtsecret123" \
+  -e ADMIN_JWT_SECRET="adminjwtsecret123" \
+  -e ADMIN_AUTH_SECRET="adminauthsecret123" \
+  -e API_TOKEN_SALT="apitokensalt123" \
+  autograph-strapi:prod
+
+
+> backend@0.1.0 start
+> strapi start
+
+[2026-02-09 11:31:29.140] error: The upload folder (/opt/app/public/uploads) doesn't exist or is not accessible. Please make sure it exists.
+Error: The upload folder (/opt/app/public/uploads) doesn't exist or is not accessible. Please make sure it exists.
+    at Object.init (/opt/node_modules/@strapi/provider-upload-local/dist/index.js:40:19)
+    at createProvider (/opt/node_modules/@strapi/upload/dist/server/register.js:58:39)
+    at Object.register (/opt/node_modules/@strapi/upload/dist/server/register.js:16:40)
+    at Object.register (/opt/node_modules/@strapi/core/dist/domain/module/index.js:46:52)
+    at Object.register (/opt/node_modules/@strapi/core/dist/registries/modules.js:30:27)
+    at async Strapi.runPluginsLifecycles (/opt/node_modules/@strapi/core/dist/Strapi.js:442:9)
+    at async Strapi.register (/opt/node_modules/@strapi/core/dist/Strapi.js:329:9)
+    at async Strapi.load (/opt/node_modules/@strapi/core/dist/Strapi.js:318:9)
+    at async Strapi.start (/opt/node_modules/@strapi/core/dist/Strapi.js:206:17)
+[2026-02-09 11:31:29.141] info: Shutting down Strapi
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 11.9.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.9.0
+npm notice To update run: npm install -g npm@11.9.0
+npm notice
+arpitpandey@Arpits-MacBook-Air backend % mkdir -p ./uploads
+chmod 777 ./uploads
+
+arpitpandey@Arpits-MacBook-Air backend % docker run -p 1337:1337 \
+  -e NODE_ENV=production \
+  -e HOST=0.0.0.0 \
+  -e PORT=1337 \
+  -e APP_KEYS="key1,key2,key3,key4" \
+  -e JWT_SECRET="jwtsecret123" \
+  -e ADMIN_JWT_SECRET="adminjwtsecret123" \
+  -e ADMIN_AUTH_SECRET="adminauthsecret123" \
+  -e API_TOKEN_SALT="apitokensalt123" \
+  -v $(pwd)/uploads:/opt/app/public/uploads \
+  autograph-strapi:prod
+
+
+> backend@0.1.0 start
+> strapi start
+
+[2026-02-09 11:32:07.645] warn: admin.auth.options.expiresIn is deprecated and will be removed in Strapi 6. Please configure admin.auth.sessions.maxRefreshTokenLifespan and admin.auth.sessions.maxSessionLifespan.
+[2026-02-09 11:32:07.909] warn: Encryption key is missing from admin.secrets.encryptionKey configuration
+[2026-02-09 11:32:07.913] warn: Encryption key is missing from admin.secrets.encryptionKey configuration
+(node:18) Warning: Missing transfer.token.salt: Data transfer features have been disabled.
+Please set transfer.token.salt in config/admin.js (ex: you can generate one using Node with `crypto.randomBytes(16).toString('base64')`)
+For security reasons, prefer storing the secret in an environment variable and read it in config/admin.js. See https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/configurations/optional/environment.html#configuration-using-environment-variables.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Project information
+
+┌────────────────────┬──────────────────────────────────────────────────┐
+│ Time               │ Mon Feb 09 2026 11:32:07 GMT+0000 (Coordinated … │
+│ Launched in        │ 1116 ms                                          │
+│ Environment        │ production                                       │
+│ Process PID        │ 18                                               │
+│ Version            │ 5.35.0 (node v22.22.0)                           │
+│ Edition            │ Community                                        │
+│ Database           │ sqlite                                           │
+│ Database name      │ .tmp/data.db                                     │
+└────────────────────┴──────────────────────────────────────────────────┘
+
+ Actions available
+
+One more thing...
+Create your first administrator 💻 by going to the administration panel at:
+
+┌───────────────────────────┐
+│ http://0.0.0.0:1337/admin │
+└───────────────────────────┘
+
+[2026-02-09 11:32:07.959] info: Strapi started successfully
+[2026-02-09 11:32:24.987] http: GET /admin (16 ms) 200
+[2026-02-09 11:32:25.011] http: GET /admin/strapi-BLm2IbpN.js (6 ms) 200
+[2026-02-09 11:32:25.307] http: GET /admin/project-type (4 ms) 200
+[2026-02-09 11:32:25.449] http: GET /favicon.ico (3 ms) 200
+[2026-02-09 11:32:25.452] http: GET /admin/en-GB-C8SI_WDh.js (8 ms) 200
+[2026-02-09 11:32:25.468] http: GET /admin/en.json-D9sQWo1q.js (5 ms) 200
+[2026-02-09 11:32:25.469] http: GET /admin/en.json-CzHRS6_9.js (5 ms) 200
+[2026-02-09 11:32:25.471] http: GET /admin/en.json-DUFkzrYB.js (3 ms) 200
+[2026-02-09 11:32:25.474] http: GET /admin/en.json-BfUxjZI3.js (5 ms) 200
+[2026-02-09 11:32:25.476] http: GET /admin/en.json-DhcUFm7N.js (5 ms) 200
+[2026-02-09 11:32:25.478] http: GET /admin/en.json-DCS336wa.js (4 ms) 200
+[2026-02-09 11:32:25.479] http: GET /admin/en.json-ClQ4xpLD.js (4 ms) 200
+[2026-02-09 11:32:25.480] http: GET /admin/en.json-CSSE1i3d.js (3 ms) 200
+[2026-02-09 11:32:25.481] http: GET /admin/en.json-DHPNOFD5.js (3 ms) 200
+[2026-02-09 11:32:25.500] http: GET /admin/AuthenticatedLayout-DXJoYe7t.js (6 ms) 200
+[2026-02-09 11:32:25.501] http: GET /admin/PrivateRoute-B1uUqOLn.js (4 ms) 200
+[2026-02-09 11:32:25.501] http: GET /admin/users-DLc-PG84.js (6 ms) 200
+[2026-02-09 11:32:25.501] http: GET /admin/index-KjYgpKK7.js (3 ms) 200
+[2026-02-09 11:32:25.502] http: GET /admin/index-BRVyLNfZ.js (5 ms) 200
+[2026-02-09 11:32:25.502] http: GET /admin/index-BnNTVkvn.js (3 ms) 200
+[2026-02-09 11:32:25.511] http: GET /admin/cloneDeep-DGgZ02GF.js (3 ms) 200
+[2026-02-09 11:32:25.512] http: GET /admin/useDragLayer-CTye3VRt.js (3 ms) 200
+[2026-02-09 11:32:25.512] http: GET /admin/HomePage-B7wm-Ljn.js (3 ms) 200
+[2026-02-09 11:32:25.513] http: GET /admin/WidgetHelpers--pvTamkH.js (3 ms) 200
+[2026-02-09 11:32:25.739] http: GET /admin/init (4 ms) 200
+^C[2026-02-09 11:37:26.553] info: Shutting down Strapi
+[2026-02-09 11:37:26.578] info: Strapi has been shut down
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 11.9.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.9.0
+npm notice To update run: npm install -g npm@11.9.0
+npm notice
+arpitpandey@Arpits-MacBook-Air backend % aws ecr create-repository --repository-name autograph-strapi
+
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-1:202662063830:repository/autograph-strapi",
+        "registryId": "202662063830",
+        "repositoryName": "autograph-strapi",
+        "repositoryUri": "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi",
+        "createdAt": "2026-02-09T17:07:30.474000+05:30",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
+arpitpandey@Arpits-MacBook-Air backend % aws ecr get-login-password --region us-east-1 \
+| docker login --username AWS --password-stdin 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi
+Login Succeeded
+arpitpandey@Arpits-MacBook-Air backend % docker tag autograph-strapi:latest 123456789012.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+docker push 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi
+Using default tag: latest
+The push refers to repository [202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi]
+tag does not exist: 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+arpitpandey@Arpits-MacBook-Air backend % docker images | grep autograph
+
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+123456789012.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest                                    e5fd7c6b23c6       2.58GB          573MB   U    
+autograph-strapi:latest                                                                                 e5fd7c6b23c6       2.58GB          573MB   U    
+autograph-strapi:prod                                                                                   cc5ccc678948       1.76GB          306MB   U    
+arpitpandey@Arpits-MacBook-Air backend % xdocker rmi 123456789012.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+
+zsh: command not found: xdocker
+arpitpandey@Arpits-MacBook-Air backend % docker rmi 123456789012.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+
+Untagged: 123456789012.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+arpitpandey@Arpits-MacBook-Air backend % docker tag autograph-strapi:prod \
+202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod
+
+arpitpandey@Arpits-MacBook-Air backend % docker images | grep autograph
+
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod                                      cc5ccc678948       1.76GB          306MB   U    
+autograph-strapi:latest                                                                                 e5fd7c6b23c6       2.58GB          573MB   U    
+autograph-strapi:prod                                                                                   cc5ccc678948       1.76GB          306MB   U    
+arpitpandey@Arpits-MacBook-Air backend % docker push 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod
+
+The push refers to repository [202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi]
+d47c30717126: Pushed 
+52b677216e57: Pushed 
+4f4fb700ef54: Pushed 
+fee5e8cc8fda: Pushed 
+0184acdb8bb1: Pushed 
+2088de1f599b: Pushed 
+d8ad8cd72600: Pushed 
+3691184ba0a5: Pushed 
+6558f33bb3b6: Pushed 
+4b8c478dab51: Pushed 
+8009eef36eab: Pushed 
+prod: digest: sha256:cc5ccc6789483b0c6dbc265af7b85b86e3822cea1319bfdd01a364805114dab6 size: 856
+arpitpandey@Arpits-MacBook-Air backend % aws ecr list-images --repository-name autograph-strapi
+
+{
+    "imageIds": [
+        {
+            "imageDigest": "sha256:07d31a81092655e01e65d81a22c7e201f5e23ed438e37710c7d6316d57250b1f"
+        },
+        {
+            "imageDigest": "sha256:253eeb7e5c769f076e9829cd3acffd8fbc5827cbb8e14e94fab4b43fb5f96ebb"
+        },
+        {
+            "imageDigest": "sha256:cc5ccc6789483b0c6dbc265af7b85b86e3822cea1319bfdd01a364805114dab6",
+            "imageTag": "prod"
+        }
+    ]
+}
+arpitpandey@Arpits-MacBook-Air backend % eksctl version
+zsh: command not found: eksctl
+arpitpandey@Arpits-MacBook-Air backend % brew install eksctl
+
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Auto-updated Homebrew!
+Updated 3 taps (hashicorp/tap, homebrew/core and homebrew/cask).
+==> New Formulae
+actions-up: Tool to update GitHub Actions to latest versions with SHA pinning
+agent-browser: Browser automation CLI for AI agents
+arcadedb: Multi-Model DBMS: Graph, Document, Key/Value, Search, Time Series, Vector
+cozyhr: Cozy wrapper around Helm and Flux CD for local development
+ic-wasm: CLI tool for performing Wasm transformations specific to ICP canisters
+icp-cli: Development tool for building and deploying canisters on ICP
+jqfmt: Opinionated formatter for jq
+odiff: Very fast SIMD-first image comparison library (with nodejs API)
+playwright-cli: CLI for Playwright: record/generate code, inspect selectors, take screenshots
+sheenbidi: Fast and stable implementation of the Unicode Bidirectional Algorithm
+skillshare: Sync skills across AI CLI tools
+static-web-apps-cli: SWA CLI serves as a local development tool for Azure Static Web Apps
+transifex-cli: Transifex command-line client
+try-rs: Temporary workspace manager for fast experimentation in the terminal
+yap: On-device audio transcription using Speech.framework
+==> New Casks
+clash-mi: Another Mihomo GUI based on Flutter
+codex-app: OpenAI's Codex desktop app for managing coding agents
+font-alyamama
+font-betania-patmos
+font-betania-patmos-gdl
+font-betania-patmos-guide-line
+font-betania-patmos-in
+font-betania-patmos-in-gdl
+font-dejavu-sans
+font-idiqlat
+font-ramsina
+luxury-yacht: Desktop app for managing Kubernetes clusters
+owocr: Optical character recognition for Japanese text
+plasticity: 3D modeling software for concept artists and designers
+posturr: Posture monitoring app
+tana: Knowledge management workspace with AI-powered outlining
+thaw: Menu bar manager
+xkey: Vietnamese input method engine
+
+You have 6 outdated formulae installed.
+
+==> Fetching downloads for: eksctl
+✔︎ Bottle Manifest eksctl (0.222.0)                                                                                                                                                  Downloaded    7.5KB/  7.5KB
+✔︎ Bottle eksctl (0.222.0)                                                                                                                                                           Downloaded   33.7MB/ 33.7MB
+==> Pouring eksctl--0.222.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/eksctl/0.222.0: 10 files, 136.4MB
+==> Running `brew cleanup eksctl`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+arpitpandey@Arpits-MacBook-Air backend % kubectl version --client
+Client Version: v1.35.0
+Kustomize Version: v5.7.1
+arpitpandey@Arpits-MacBook-Air backend % eksctl create cluster \
+  --name autograph-eks \
+  --region us-east-1 \
+  --version 1.29 \
+  --nodegroup-name general-ng \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 1 \
+  --nodes-max 3 \
+  --managed \
+  --with-oidc
+
+2026-02-09 17:17:40 [ℹ]  eksctl version 0.222.0-dev+c53a3a5b2.2026-02-06T23:15:21Z
+2026-02-09 17:17:40 [ℹ]  using region us-east-1
+2026-02-09 17:17:45 [ℹ]  setting availability zones to [us-east-1d us-east-1a]
+2026-02-09 17:17:45 [ℹ]  subnets for us-east-1d - public:192.168.0.0/19 private:192.168.64.0/19
+2026-02-09 17:17:45 [ℹ]  subnets for us-east-1a - public:192.168.32.0/19 private:192.168.96.0/19
+2026-02-09 17:17:45 [ℹ]  nodegroup "general-ng" will use "" [AmazonLinux2023/1.29]
+2026-02-09 17:17:45 [!]  Auto Mode will be enabled by default in an upcoming release of eksctl. This means managed node groups and managed networking add-ons will no longer be created by default. To maintain current behavior, explicitly set 'autoModeConfig.enabled: false' in your cluster configuration. Learn more: https://eksctl.io/usage/auto-mode/
+2026-02-09 17:17:45 [ℹ]  using Kubernetes version 1.29
+2026-02-09 17:17:45 [ℹ]  creating EKS cluster "autograph-eks" in "us-east-1" region with managed nodes
+2026-02-09 17:17:45 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2026-02-09 17:17:45 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-east-1 --cluster=autograph-eks'
+2026-02-09 17:17:45 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "autograph-eks" in "us-east-1"
+2026-02-09 17:17:45 [ℹ]  CloudWatch logging will not be enabled for cluster "autograph-eks" in "us-east-1"
+2026-02-09 17:17:45 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-east-1 --cluster=autograph-eks'
+2026-02-09 17:17:45 [ℹ]  default addons metrics-server, vpc-cni, kube-proxy, coredns were not specified, will install them as EKS addons
+2026-02-09 17:17:45 [ℹ]  
+2 sequential tasks: { create cluster control plane "autograph-eks", 
+    2 sequential sub-tasks: { 
+        5 sequential sub-tasks: { 
+            1 task: { create addons },
+            wait for control plane to become ready,
+            associate IAM OIDC provider,
+            no tasks,
+            update VPC CNI to use IRSA if required,
+        },
+        create managed nodegroup "general-ng",
+    } 
+}
+2026-02-09 17:17:45 [ℹ]  building cluster stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:17:49 [ℹ]  deploying stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:18:19 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:18:53 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:20:00 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:21:03 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:22:08 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:23:15 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:24:21 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:25:28 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:26:34 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:27:38 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-cluster"
+2026-02-09 17:27:59 [!]  recommended policies were found for "vpc-cni" addon, but since OIDC is disabled on the cluster, eksctl cannot configure the requested permissions; the recommended way to provide IAM permissions for "vpc-cni" addon is via pod identity associations; after addon creation is completed, add all recommended policies to the config file, under `addon.PodIdentityAssociations`, and run `eksctl update addon`
+2026-02-09 17:27:59 [ℹ]  creating addon: vpc-cni
+2026-02-09 17:28:00 [ℹ]  successfully created addon: vpc-cni
+2026-02-09 17:28:01 [ℹ]  creating addon: kube-proxy
+2026-02-09 17:28:01 [ℹ]  successfully created addon: kube-proxy
+2026-02-09 17:28:02 [ℹ]  creating addon: coredns
+2026-02-09 17:28:03 [ℹ]  successfully created addon: coredns
+2026-02-09 17:30:20 [ℹ]  addon "vpc-cni" active
+2026-02-09 17:30:26 [ℹ]  deploying stack "eksctl-autograph-eks-addon-vpc-cni"
+2026-02-09 17:30:27 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-addon-vpc-cni"
+2026-02-09 17:31:04 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-addon-vpc-cni"
+2026-02-09 17:31:04 [ℹ]  updating addon
+2026-02-09 17:31:16 [ℹ]  addon "vpc-cni" active
+2026-02-09 17:31:24 [ℹ]  building managed nodegroup stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:31:29 [ℹ]  deploying stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:31:29 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:32:03 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:32:57 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:49:55 [ℹ]  waiting for CloudFormation stack "eksctl-autograph-eks-nodegroup-general-ng"
+2026-02-09 17:49:55 [ℹ]  waiting for the control plane to become ready
+2026-02-09 17:49:56 [✔]  saved kubeconfig as "/Users/arpitpandey/.kube/config"
+2026-02-09 17:49:56 [ℹ]  no tasks
+2026-02-09 17:49:56 [✔]  all EKS cluster resources for "autograph-eks" have been created
+2026-02-09 17:49:59 [ℹ]  nodegroup "general-ng" has 2 node(s)
+2026-02-09 17:49:59 [ℹ]  node "ip-192-168-13-175.ec2.internal" is ready
+2026-02-09 17:49:59 [ℹ]  node "ip-192-168-48-69.ec2.internal" is ready
+2026-02-09 17:49:59 [ℹ]  waiting for at least 1 node(s) to become ready in "general-ng"
+2026-02-09 17:50:00 [ℹ]  nodegroup "general-ng" has 2 node(s)
+2026-02-09 17:50:00 [ℹ]  node "ip-192-168-13-175.ec2.internal" is ready
+2026-02-09 17:50:00 [ℹ]  node "ip-192-168-48-69.ec2.internal" is ready
+2026-02-09 17:50:00 [✔]  created 1 managed nodegroup(s) in cluster "autograph-eks"
+2026-02-09 17:50:10 [ℹ]  creating addon: metrics-server
+2026-02-09 17:50:11 [ℹ]  successfully created addon: metrics-server
+2026-02-09 17:50:18 [ℹ]  kubectl command should work with "/Users/arpitpandey/.kube/config", try 'kubectl get nodes'
+2026-02-09 17:50:18 [✔]  EKS cluster "autograph-eks" in "us-east-1" region is ready
+arpitpandey@Arpits-MacBook-Air backend % kubectl get nodes
+
+NAME                             STATUS   ROLES    AGE   VERSION
+ip-192-168-13-175.ec2.internal   Ready    <none>   83m   v1.29.15-eks-ecaa3a6
+ip-192-168-48-69.ec2.internal    Ready    <none>   83m   v1.29.15-eks-ecaa3a6
+arpitpandey@Arpits-MacBook-Air backend % aws iam list-roles | grep NodeInstanceRole
+
+            "RoleName": "eksctl-autograph-eks-nodegroup-gen-NodeInstanceRole-oOz1TpjDOhU9",
+            "Arn": "arn:aws:iam::202662063830:role/eksctl-autograph-eks-nodegroup-gen-NodeInstanceRole-oOz1TpjDOhU9",
+arpitpandey@Arpits-MacBook-Air backend % aws iam attach-role-policy \
+  --role-name eksctl-autograph-eks-nodegroup-general-ng-NodeInstanceRole-XXXX \
+  --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+
+
+An error occurred (NoSuchEntity) when calling the AttachRolePolicy operation: The role with name eksctl-autograph-eks-nodegroup-general-ng-NodeInstanceRole-XXXX cannot be found.
+arpitpandey@Arpits-MacBook-Air backend % aws iam attach-role-policy \
+  --role-name eksctl-autograph-eks-nodegroup-gen-NodeInstanceRole-oOz1TpjDOhU9 \
+  --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+
+arpitpandey@Arpits-MacBook-Air backend % kubectl create namespace autograph
+
+namespace/autograph created
+arpitpandey@Arpits-MacBook-Air backend % vi strapi-deployment.yaml
+
+arpitpandey@Arpits-MacBook-Air backend % kubectl apply -f strapi-deployment.yaml
+
+deployment.apps/autograph-strapi created
+arpitpandey@Arpits-MacBook-Air backend % kubectl get pods -n autograph
+
+NAME                                READY   STATUS         RESTARTS   AGE
+autograph-strapi-58866c4c7b-ds99w   0/1     ErrImagePull   0          10s
+arpitpandey@Arpits-MacBook-Air backend % kubectl describe pod autograph-strapi-58866c4c7b-ds99w -n autograph
+
+Name:             autograph-strapi-58866c4c7b-ds99w
+Namespace:        autograph
+Priority:         0
+Service Account:  default
+Node:             ip-192-168-48-69.ec2.internal/192.168.48.69
+Start Time:       Mon, 09 Feb 2026 18:58:32 +0530
+Labels:           app=autograph-strapi
+                  pod-template-hash=58866c4c7b
+Annotations:      <none>
+Status:           Pending
+IP:               192.168.46.6
+IPs:
+  IP:           192.168.46.6
+Controlled By:  ReplicaSet/autograph-strapi-58866c4c7b
+Containers:
+  strapi:
+    Container ID:   
+    Image:          202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod
+    Image ID:       
+    Port:           1337/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      NODE_ENV:           production
+      HOST:               0.0.0.0
+      PORT:               1337
+      APP_KEYS:           key1,key2,key3,key4
+      JWT_SECRET:         jwtsecret123
+      ADMIN_JWT_SECRET:   adminjwtsecret123
+      ADMIN_AUTH_SECRET:  adminauthsecret123
+      API_TOKEN_SALT:     apitokensalt123
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-b8xxf (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-b8xxf:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  47s                default-scheduler  Successfully assigned autograph/autograph-strapi-58866c4c7b-ds99w to ip-192-168-48-69.ec2.internal
+  Normal   BackOff    23s (x2 over 47s)  kubelet            spec.containers{strapi}: Back-off pulling image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod"
+  Warning  Failed     23s (x2 over 47s)  kubelet            spec.containers{strapi}: Error: ImagePullBackOff
+  Normal   Pulling    8s (x3 over 48s)   kubelet            spec.containers{strapi}: Pulling image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod"
+  Warning  Failed     7s (x3 over 47s)   kubelet            spec.containers{strapi}: Failed to pull image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod": rpc error: code = NotFound desc = failed to pull and unpack image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod": no match for platform in manifest: not found
+  Warning  Failed     7s (x3 over 47s)   kubelet            spec.containers{strapi}: Error: ErrImagePull
+arpitpandey@Arpits-MacBook-Air backend % docker images | grep autograph
+
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod                                      cc5ccc678948       1.76GB          306MB   U    
+autograph-strapi:latest                                                                                 e5fd7c6b23c6       2.58GB          573MB   U    
+autograph-strapi:prod                                                                                   cc5ccc678948       1.76GB          306MB   U    
+arpitpandey@Arpits-MacBook-Air backend % aws ecr list-images \
+  --repository-name autograph-strapi \
+  --region us-east-1
+
+{
+    "imageIds": [
+        {
+            "imageDigest": "sha256:07d31a81092655e01e65d81a22c7e201f5e23ed438e37710c7d6316d57250b1f"
+        },
+        {
+            "imageDigest": "sha256:253eeb7e5c769f076e9829cd3acffd8fbc5827cbb8e14e94fab4b43fb5f96ebb"
+        },
+        {
+            "imageDigest": "sha256:cc5ccc6789483b0c6dbc265af7b85b86e3822cea1319bfdd01a364805114dab6",
+            "imageTag": "prod"
+        }
+    ]
+}
+arpitpandey@Arpits-MacBook-Air backend % vi strapi-deployment.yaml
+
+arpitpandey@Arpits-MacBook-Air backend % vi strapi-deployment.yaml
+
+arpitpandey@Arpits-MacBook-Air backend % kubectl apply -f strapi-deployment.yaml
+
+deployment.apps/autograph-strapi configured
+arpitpandey@Arpits-MacBook-Air backend % kubectl rollout restart deployment autograph-strapi -n autograph
+
+deployment.apps/autograph-strapi restarted
+arpitpandey@Arpits-MacBook-Air backend % kubectl get pods -n autograph
+
+NAME                                READY   STATUS             RESTARTS   AGE
+autograph-strapi-67c5bdcb6f-4rr99   0/1     ImagePullBackOff   0          15s
+autograph-strapi-7fcbfccf74-xn6wl   0/1     ErrImagePull       0          26s
+arpitpandey@Arpits-MacBook-Air backend % docker buildx create --use --name multiarch
+docker buildx inspect --bootstrap
+
+ERROR: existing instance for "multiarch" but no append mode, specify the node name to make changes for existing instances
+Name:          multiarch
+Driver:        docker-container
+Last Activity: 2026-02-09 08:19:34 +0000 UTC
+
+Nodes:
+Name:                  multiarch0
+Endpoint:              desktop-linux
+Status:                running
+BuildKit daemon flags: --allow-insecure-entitlement=network.host
+BuildKit version:      v0.27.1
+Platforms:             linux/arm64, linux/amd64, linux/amd64/v2, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+Labels:
+ org.mobyproject.buildkit.worker.executor:         oci
+ org.mobyproject.buildkit.worker.hostname:         87e84a81b3f9
+ org.mobyproject.buildkit.worker.network:          host
+ org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+ org.mobyproject.buildkit.worker.selinux.enabled:  false
+ org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+GC Policy rule#0:
+ All:            false
+ Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+ Keep Duration:  48h0m0s
+ Max Used Space: 488.3MiB
+GC Policy rule#1:
+ All:            false
+ Keep Duration:  1440h0m0s
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 41.91GiB
+GC Policy rule#2:
+ All:            false
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 41.91GiB
+GC Policy rule#3:
+ All:            true
+ Reserved Space: 9.313GiB
+ Max Used Space: 93.13GiB
+ Min Free Space: 41.91GiB
+arpitpandey@Arpits-MacBook-Air backend % docker buildx build \
+  --platform linux/amd64 \
+  -t 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod \
+  --push \
+  .
+
+[+] Building 629.1s (21/21) FINISHED                                                                                                                                                docker-container:multiarch
+ => [internal] load build definition from Dockerfile                                                                                                                                                      0.0s
+ => => transferring dockerfile: 748B                                                                                                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/node:22-alpine                                                                                                                                         2.8s
+ => [internal] load .dockerignore                                                                                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                                                                                           0.0s
+ => [internal] load build context                                                                                                                                                                         0.0s
+ => => transferring context: 774.68kB                                                                                                                                                                     0.0s
+ => CACHED [build 1/9] FROM docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                      0.0s
+ => => resolve docker.io/library/node:22-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34                                                                                   0.0s
+ => [stage-1 2/7] RUN apk add --no-cache vips-dev                                                                                                                                                        52.2s
+ => [build 2/9] RUN apk add --no-cache   build-base gcc autoconf automake   zlib-dev libpng-dev vips-dev git bash                                                                                        78.9s
+ => [stage-1 3/7] WORKDIR /opt/                                                                                                                                                                           0.0s
+ => [build 3/9] WORKDIR /opt/                                                                                                                                                                             0.1s
+ => [build 4/9] COPY package.json package-lock.json ./                                                                                                                                                    0.0s 
+ => [build 5/9] RUN npm install -g node-gyp                                                                                                                                                               5.1s 
+ => [build 6/9] RUN npm install                                                                                                                                                                          69.6s 
+ => [build 7/9] WORKDIR /opt/app                                                                                                                                                                          0.5s 
+ => [build 8/9] COPY . .                                                                                                                                                                                  0.0s 
+ => [build 9/9] RUN npm run build                                                                                                                                                                        36.6s 
+ => [stage-1 4/7] COPY --from=build /opt/node_modules ./node_modules                                                                                                                                      5.0s 
+ => [stage-1 5/7] WORKDIR /opt/app                                                                                                                                                                        0.3s 
+ => [stage-1 6/7] COPY --from=build /opt/app ./                                                                                                                                                           0.0s 
+ => [stage-1 7/7] RUN chown -R node:node /opt/app                                                                                                                                                         0.2s 
+ => exporting to image                                                                                                                                                                                  421.5s 
+ => => exporting layers                                                                                                                                                                                  16.9s 
+ => => exporting manifest sha256:74001c69941ee54f020dd88525788890f5ef356e5b525221657c20f4dde4dedd                                                                                                         0.0s
+ => => exporting config sha256:d74a3a7ddbc054f4a02ab88f555e053d75ef76e0b528c24a5882afe4a6bed9cc                                                                                                           0.0s
+ => => exporting attestation manifest sha256:d5bd67895a09ada8cd0084af2a30aa4e8791e4da84a88e74845ee4dcc2431e55                                                                                             0.0s
+ => => exporting manifest list sha256:b26101ca7efdce472a80aaca81c47ba5f6e7e3add0bc2e41c727ae7d7821270d                                                                                                    0.0s
+ => => pushing layers                                                                                                                                                                                   401.9s
+ => => pushing manifest for 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:prod@sha256:b26101ca7efdce472a80aaca81c47ba5f6e7e3add0bc2e41c727ae7d7821270d                                    2.8s
+ => [auth] sharing credentials for 202662063830.dkr.ecr.us-east-1.amazonaws.com                                                                                                                           0.0s
+
+View build details: docker-desktop://dashboard/build/multiarch/multiarch0/mxinrxym7810e2q1jauaw8q5g
+arpitpandey@Arpits-MacBook-Air backend % aws ecr batch-get-image \
+  --repository-name autograph-strapi \
+  --image-ids imageTag=prod \
+  --region us-east-1 \
+  --query 'images[].imageManifest'
+
+[
+    "{\n  \"schemaVersion\": 2,\n  \"mediaType\": \"application/vnd.oci.image.index.v1+json\",\n  \"manifests\": [\n    {\n      \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n      \"digest\": \"sha256:74001c69941ee54f020dd88525788890f5ef356e5b525221657c20f4dde4dedd\",\n      \"size\": 2200,\n      \"platform\": {\n        \"architecture\": \"amd64\",\n        \"os\": \"linux\"\n      }\n    },\n    {\n      \"mediaType\": \"application/vnd.oci.image.manifest.v1+json\",\n      \"digest\": \"sha256:d5bd67895a09ada8cd0084af2a30aa4e8791e4da84a88e74845ee4dcc2431e55\",\n      \"size\": 566,\n      \"annotations\": {\n        \"vnd.docker.reference.digest\": \"sha256:74001c69941ee54f020dd88525788890f5ef356e5b525221657c20f4dde4dedd\",\n        \"vnd.docker.reference.type\": \"attestation-manifest\"\n      },\n      \"platform\": {\n        \"architecture\": \"unknown\",\n        \"os\": \"unknown\"\n      }\n    }\n  ]\n}"
+]
+arpitpandey@Arpits-MacBook-Air backend % kubectl rollout restart deployment autograph-strapi -n autograph
+
+deployment.apps/autograph-strapi restarted
+arpitpandey@Arpits-MacBook-Air backend % kubectl get pods -n autograph
+
+NAME                                READY   STATUS             RESTARTS   AGE
+autograph-strapi-67c5bdcb6f-4rr99   0/1     ImagePullBackOff   0          12m
+autograph-strapi-7bb57c64dd-f5jsf   0/1     ImagePullBackOff   0          19s
+arpitpandey@Arpits-MacBook-Air backend % k desccribe pods
+zsh: command not found: k
+arpitpandey@Arpits-MacBook-Air backend % kubectl describe pods
+No resources found in default namespace.
+arpitpandey@Arpits-MacBook-Air backend % kubectl describe pod 
+No resources found in default namespace.
+arpitpandey@Arpits-MacBook-Air backend % kubectl describe pod  autograph-strapi-67c5bdcb6f-4rr99 
+Error from server (NotFound): pods "autograph-strapi-67c5bdcb6f-4rr99" not found
+arpitpandey@Arpits-MacBook-Air backend % kubectl describe pod autograph-strapi-67c5bdcb6f-4rr99 -n autograph
+
+Name:             autograph-strapi-67c5bdcb6f-4rr99
+Namespace:        autograph
+Priority:         0
+Service Account:  default
+Node:             ip-192-168-13-175.ec2.internal/192.168.13.175
+Start Time:       Mon, 09 Feb 2026 19:01:29 +0530
+Labels:           app=autograph-strapi
+                  pod-template-hash=67c5bdcb6f
+Annotations:      kubectl.kubernetes.io/restartedAt: 2026-02-09T19:01:29+05:30
+Status:           Pending
+IP:               192.168.18.211
+IPs:
+  IP:           192.168.18.211
+Controlled By:  ReplicaSet/autograph-strapi-67c5bdcb6f
+Containers:
+  strapi:
+    Container ID:   
+    Image:          202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+    Image ID:       
+    Port:           1337/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      NODE_ENV:           production
+      HOST:               0.0.0.0
+      PORT:               1337
+      APP_KEYS:           key1,key2,key3,key4
+      JWT_SECRET:         jwtsecret123
+      ADMIN_JWT_SECRET:   adminjwtsecret123
+      ADMIN_AUTH_SECRET:  adminauthsecret123
+      API_TOKEN_SALT:     apitokensalt123
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-lc67x (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-lc67x:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  14m                   default-scheduler  Successfully assigned autograph/autograph-strapi-67c5bdcb6f-4rr99 to ip-192-168-13-175.ec2.internal
+  Normal   Pulling    13m (x4 over 14m)     kubelet            spec.containers{strapi}: Pulling image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest"
+  Warning  Failed     13m (x4 over 14m)     kubelet            spec.containers{strapi}: Failed to pull image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest": rpc error: code = NotFound desc = failed to pull and unpack image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest": failed to resolve reference "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest": 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest: not found
+  Warning  Failed     13m (x4 over 14m)     kubelet            spec.containers{strapi}: Error: ErrImagePull
+  Warning  Failed     13m (x6 over 14m)     kubelet            spec.containers{strapi}: Error: ImagePullBackOff
+  Normal   BackOff    4m46s (x42 over 14m)  kubelet            spec.containers{strapi}: Back-off pulling image "202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest"
+arpitpandey@Arpits-MacBook-Air backend % kubectl edit deployment autograph-strapi -n autograph
+
+deployment.apps/autograph-strapi edited
+arpitpandey@Arpits-MacBook-Air backend % kubectl delete pod -n autograph --all
+
+pod "autograph-strapi-7bb57c64dd-f5jsf" deleted from autograph namespace
+pod "autograph-strapi-7fdf8c7bc8-jm5g2" deleted from autograph namespace
+arpitpandey@Arpits-MacBook-Air backend % kubectl get pods -n autograph -w
+
+NAME                                READY   STATUS   RESTARTS     AGE
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error    1 (9s ago)   24s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   1 (15s ago)   37s
+autograph-strapi-7fdf8c7bc8-kkwf2   1/1     Running            2 (16s ago)   38s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error              2 (21s ago)   43s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   2 (12s ago)   54s
+autograph-strapi-7fdf8c7bc8-kkwf2   1/1     Running            3 (28s ago)   70s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error              3 (33s ago)   75s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   3 (13s ago)   87s
+autograph-strapi-7fdf8c7bc8-kkwf2   1/1     Running            4 (51s ago)   2m5s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error              4 (56s ago)   2m10s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   4 (16s ago)   2m25s
+autograph-strapi-7fdf8c7bc8-kkwf2   1/1     Running            5 (91s ago)   3m40s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error              5 (96s ago)   3m45s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   5 (15s ago)   3m59s
+autograph-strapi-7fdf8c7bc8-kkwf2   1/1     Running            6 (2m41s ago)   6m25s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     Error              6 (2m45s ago)   6m29s
+autograph-strapi-7fdf8c7bc8-kkwf2   0/1     CrashLoopBackOff   6 (15s ago)     6m44s
+^C%                                                                                                                                                                                                            arpitpandey@Arpits-MacBook-Air backend % kubectl logs -n autograph autograph-strapi-7fdf8c7bc8-kkwf2 --previous
+
+
+> backend@0.1.0 start
+> strapi start
+
+[2026-02-09 13:55:12.510] error: The upload folder (/opt/app/public/uploads) doesn't exist or is not accessible. Please make sure it exists.
+Error: The upload folder (/opt/app/public/uploads) doesn't exist or is not accessible. Please make sure it exists.
+    at Object.init (/opt/node_modules/@strapi/provider-upload-local/dist/index.js:40:19)
+    at createProvider (/opt/node_modules/@strapi/upload/dist/server/register.js:58:39)
+    at Object.register (/opt/node_modules/@strapi/upload/dist/server/register.js:16:40)
+    at Object.register (/opt/node_modules/@strapi/core/dist/domain/module/index.js:46:52)
+    at Object.register (/opt/node_modules/@strapi/core/dist/registries/modules.js:30:27)
+    at async Strapi.runPluginsLifecycles (/opt/node_modules/@strapi/core/dist/Strapi.js:442:9)
+    at async Strapi.register (/opt/node_modules/@strapi/core/dist/Strapi.js:329:9)
+    at async Strapi.load (/opt/node_modules/@strapi/core/dist/Strapi.js:318:9)
+    at async Strapi.start (/opt/node_modules/@strapi/core/dist/Strapi.js:206:17)
+[2026-02-09 13:55:12.511] info: Shutting down Strapi
+npm notice
+npm notice New major version of npm available! 10.9.4 -> 11.9.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.9.0
+npm notice To update run: npm install -g npm@11.9.0
+npm notice
+arpitpandey@Arpits-MacBook-Air backend % kubectl edit deployment autograph-strapi -n autograph
+
+
+Edit cancelled, no changes made.
+arpitpandey@Arpits-MacBook-Air backend % 
+arpitpandey@Arpits-MacBook-Air backend % ls
+config			Dockerfile		package-lock.json	public			src			tsconfig.json
+database		favicon.png		package.json		README.md		strapi-deployment.yaml	uploads
+arpitpandey@Arpits-MacBook-Air backend % cat strapi-deployment.yaml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autograph-strapi
+  namespace: autograph
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autograph-strapi
+  template:
+    metadata:
+      labels:
+        app: autograph-strapi
+    spec:
+      containers:
+        - name: strapi
+          image: 202662063830.dkr.ecr.us-east-1.amazonaws.com/autograph-strapi:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 1337
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: HOST
+              value: "0.0.0.0"
+            - name: PORT
+              value: "1337"
+            - name: APP_KEYS
+              value: "key1,key2,key3,key4"
+            - name: JWT_SECRET
+              value: "jwtsecret123"
+            - name: ADMIN_JWT_SECRET
+              value: "adminjwtsecret123"
+            - name: ADMIN_AUTH_SECRET
+              value: "adminauthsecret123"
+            - name: API_TOKEN_SALT
+              value: "apitokensalt123"
+
+arpitpandey@Arpits-MacBook-Air backend % vi  strapi-deployment.yaml
+arpitpandey@Arpits-MacBook-Air backend % kubectl apply -f strapi-deployment.yaml
+kubectl rollout restart deployment autograph-strapi -n autograph
+
+deployment.apps/autograph-strapi configured
+deployment.apps/autograph-strapi restarted
+arpitpandey@Arpits-MacBook-Air backend % kubectl get pods -n autograph -w
+
+NAME                                READY   STATUS    RESTARTS   AGE
+autograph-strapi-57487fd8dc-jmcdd   1/1     Running   0          16s
+^C%                                                                                                                                                                                                            arpitpandey@Arpits-MacBook-Air backend % vi strapi-service.yaml
+arpitpandey@Arpits-MacBook-Air backend % kubectl apply -f strapi-service.yaml
+
+service/autograph-strapi-service created
+arpitpandey@Arpits-MacBook-Air backend % kubectl get svc -n autograph
+
+NAME                       TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)        AGE
+autograph-strapi-service   LoadBalancer   10.100.147.72   a5f921edeb9c34e0a9b30bff1e08cc9e-1839937241.us-east-1.elb.amazonaws.com   80:30182/TCP   57s
+arpitpandey@Arpits-MacBook-Air backend % kubectl logs -n autograph -l app=autograph-strapi
+
+ Actions available
+
+One more thing...
+Create your first administrator 💻 by going to the administration panel at:
+
+┌───────────────────────────┐
+│ http://0.0.0.0:1337/admin │
+└───────────────────────────┘
+
+[2026-02-09 14:01:21.353] info: Strapi started successfully
+arpitpandey@Arpits-MacBook-Air backend % ;2C;2C
